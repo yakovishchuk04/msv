@@ -1,10 +1,17 @@
+:root{
+	scroll-behavior: smooth;
+}
 *,
 *::before,
 *::after{
 	box-sizing: border-box;
 }
 body{
-	font-family: 'Maven Pro';
+	font-family: 'Open Sans';
+	color: #3C3C3B;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 23px;
 }
 a{
 	text-decoration: none;
@@ -20,36 +27,117 @@ li{
 }
 .default-btn{
 	color: #FFFFFF;
-	background-color: ;
+	background-color: #3C3C3B;
 	padding: 13px 19px;
-	border: 1px solid #0FB3AF;
+	border: 1px solid #000000;
 	box-shadow: 0px 5px 15px -3px rgba(15, 179, 175, 0.18);
 	border-radius: 5px;
+	text-transform: uppercase;
+	transition: all 0.5s;
+}
+.default-btn:hover{
+	background-color: black;
+}
+.default-title{
+	font-family: 'Maven Pro';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 47px;
+	letter-spacing: 0.02em;
 }
 .header__inner{
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	min-height: 100px;
+	padding: 0 35px;
 }
 .header__list{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.header__list-item{
-	h
-}
 .header__list-item + .header__list-item{
-	h
+	margin-left: 32px;
 }
 .header__list-link{
-	font-family: 'Maven Pro';
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 21px;
 	transition: all 0.5s;
 }
-.header__list-link::hover{
-	color:
-	font-weight: 600;
+.header__list-link:hover{
+	color: black;
+	letter-spacing: 0.5px;
+}
+
+/* далі тут ви */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.toTop{
+	position: fixed;
+	bottom: 16px;
+	right: 32px;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: #F2F2F2;
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+	backdrop-filter: blur(5px);
+	cursor: pointer;
+	text-decoration: none;
+	opacity: 0; 
+	z-index: 1000;
+	transition: all 0.3s ease-out;
+}
+.toTop::before{
+	content: '';
+	position: absolute;
+	height: 15px;
+	width: 15px;
+	border-top: 3px solid black;
+	border-left: 3px solid black;
+	transform: rotate(45deg);
+	left: 14px;
+	top: 19.2px;
+	transition: all 0.3s ease-out;
+}
+.toTop:hover{
+	background-color: black;
+}
+.toTop:hover::before{
+	border-color: #FFF;
+}
+.toTop.active
+{
+	bottom: 32px;
+	opacity: 1;
 }
