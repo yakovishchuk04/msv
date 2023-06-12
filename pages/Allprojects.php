@@ -1,3 +1,9 @@
+<?php 
+	include "../php/databases.php";
+	$connect = mysqli_connect($par1_ip, $par2_name, $par3_p, $par4_db);
+	$products = mysqli_query($connect, "SELECT * From `food`");
+	$products = mysqli_fetch_all($products);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,7 +31,7 @@
       <div class="container">
         <div class="header__inner">
           <div class="header-logo">
-            <a href="#"><img src="img/image_29.png" alt="logo" /></a>
+            <a href="#"><img src="../img/logo.png" alt="logo" /></a>
           </div>
           <nav>
             <div class="menu__btn">
@@ -33,13 +39,13 @@
             </div>
             <ul class="header__list">
               <li class="header__list-item">
-                <a class="header__list-link" href="#">Home</a>
+                <a class="header__list-link" href="../index.html">Home</a>
               </li>
               <li class="header__list-item">
-                <a class="header__list-link" href="#">Our projects</a>
+                <a class="header__list-link" href="#projects">Our projects</a>
               </li>
               <li class="header__list-item">
-                <a class="header__list-link" href="#">Contact us</a>
+                <a class="header__list-link" href="#footer">Contact us</a>
               </li>
             </ul>
           </nav>
@@ -53,85 +59,32 @@
         </div>
       </div>
     </section>
-    <section class="projects">
+    <section class="projects" id="projects">
       <div class="container">
         <div class="projects_main">
-          <div class="projects_main_classes">
-            <img src="../img/build-1.png" />
-            <h3>Tranquil Haven Retreat</h3>
-            <p>
-              Indulge in the serenity and harmony of this luxurious retreat
-              offered for sale. Captivating landscapes and sophisticated
-              interiors create the perfect atmosphere for relaxation and
-              rejuvenation
-            </p>
-          </div>
-          <div class="projects_main_classes">
-            <img src="../img/build-2.png" />
-            <h3>Sunset Vista Residence</h3>
-            <p>
-              Immerse yourself in the incredible beauty of nature while
-              witnessing breathtaking sunsets from this stunning house.
-              Expansive windows allow ample natural light and offer magnificent
-              views of the surrounding nature and the ocean
-            </p>
-          </div>
-          <div class="projects_main_classes">
-            <img src="../img/build-3.png" />
-            <h3>Elegant Manor Estate</h3>
-            <p>
-              This elegant mansion impresses with its opulence and grandeur.
-              Spacious rooms, luxurious details, and exquisite design make this
-              house a true palace for discerning tastes
-            </p>
-          </div>
-          <div class="projects_main_classes">
-            <img src="../img/build-4.png" />
-            <h3>Coastal Breeze Cottage</h3>
-            <p>
-              Welcome to this charming and cozy coastal cottage where you can
-              enjoy the fresh air and stunning views of the coastline. It's the
-              perfect place for a seaside getaway
-            </p>
-          </div>
-          <div class="projects_main_classes">
-            <img src="../img/build-5.png" />
-            <h3>Serenity Heights Villa</h3>
-            <p>
-              Perched on a height, this villa offers unparalleled tranquility
-              and privacy. A vast terrace allows you to enjoy breathtaking
-              panoramic views of the mountains and the lush surroundings
-            </p>
-          </div>
-          <div class="projects_main_classes">
-            <img src="../img/build-6.png" />
-            <h3>Modern Urban Oasis</h3>
-            <p>
-              This contemporary house is designed to be an oasis in the midst of
-              a modern urban environment. Discover state-of-the-art features,
-              stylish design, and comfort that make this house perfect for
-              modern city living
-            </p>
-          </div>
+					<?php 
+					foreach($products as $product)
+					{
+						?>
 					<div class="projects_main_classes">
-            <img src="../img/build-6.png" />
-            <h3>Modern Urban Oasis</h3>
+            <img src="../img/<?= $product[2] ?>" />
+            <h3> <?= $product[1] ?></h3>
             <p>
-              This contemporary house is designed to be an oasis in the midst of
-              a modern urban environment. Discover state-of-the-art features,
-              stylish design, and comfort that make this house perfect for
-              modern city living
+						<?= $product[3] ?>
             </p>
           </div>
+					<?php
+					}
+					?>
         </div>
       </div>
     </section>
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="container">
         <div class="footer__inner">
           <div class="footer__logo">
             <div class="footer__logo-logo">
-              <a href="#"><img src="" alt="logo" /></a>
+              <a href="#"><img src="../img/logo.png" alt="logo" /></a>
             </div>
             <div class="footer__logo-desc">
               Real estate for any the taste is only ours
@@ -141,16 +94,16 @@
             <div class="footer__list-item">
               <div class="footer__list-item-title">Quick Links</div>
               <div class="footer__list-item-link">
-                <a href="#">Home</a>
+                <a href="../index.html">Home</a>
               </div>
               <div class="footer__list-item-link">
-                <a href="#">Articles</a>
+                <a href="#projects">Projects</a>
               </div>
               <div class="footer__list-item-link">
-                <a href="#">About us</a>
+                <a href="../index.html#about_us">About us</a>
               </div>
               <div class="footer__list-item-link">
-                <a href="#">Contact us</a>
+                <a href="#footer">Contact us</a>
               </div>
             </div>
             <div class="footer__list-item footer__list-item--icons">
