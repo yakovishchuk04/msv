@@ -188,6 +188,11 @@ li {
 }
 .projects_main_classes img {
   margin-bottom: 30px;
+	width: 400px;
+	height: 262px;
+	object-fit: cover;
+	border-radius: 5px;
+	box-shadow: ;
 }
 
 .footer {
