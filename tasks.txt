@@ -1,4 +1,0 @@
-logo
-figma
-admin-func
-admin-page
