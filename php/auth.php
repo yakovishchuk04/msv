@@ -50,7 +50,7 @@
 }
 body{
 	background-image: url('https://img.freepik.com/premium-photo/dark-grey-black-slate-texture-with-high-resolution-background-of-natural-black-stone-wall_38607-444.jpg');
-
+	
 	font-family: "Maven Pro";
 }
 form{
@@ -124,6 +124,7 @@ button:hover{
 	padding: 15px;
 	margin-bottom: 50px;
 	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+	background: transparent;
 }
 .list-title {
 }
@@ -132,6 +133,10 @@ button:hover{
 	max-width: 400px;
 	width: 100%;
 	padding: 15px;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin-right: 20px;
+	background: white;
 }
 .list-id {
 	font-weight: 700;
@@ -162,6 +167,17 @@ button:hover{
 	background: black;
 	color: white;
 }
+.list__links{
+	display: flex;
+	align-items: center;
+}
+.list-link--delete a{
+	margin-left: 10px;
+}
+.list-link--delete a:hover{
+	background: red;
+	color: white;
+}
 </style>
 <body>
 	<div class="container">
@@ -171,12 +187,7 @@ button:hover{
 			<input type="text" class="reg-input" name="title" id="title" placeholder="name">
 			<textarea type="text" class="reg-input" name="desc"  id="desc"  placeholder="description"></textarea>
 			<input type="text" class="reg-input" name="src"  	id="src"   placeholder="sourse">
-			<button type="submit" class="reg-sumbit">To do</button>
-		</form>
-		<form action="delete.php" class="Add" style="height: 150px" method="POST">
-			<div class="form-title">DELETE</div>
-			<input type="text" class="reg-input" name="name" id="name" placeholder="name">
-			<button type="submit" class="reg-sumbit">To do</button>
+			<button type="submit" class="reg-sumbit">Add</button>
 		</form>
 		</div>
 		<div class="list-wrapper">
@@ -190,7 +201,10 @@ button:hover{
 			<div class="list-title">name: <?= $product[1] ?></div>
 			<div class="list-desc">source: <?= $product[2] ?></div>
 			<div class="list-src">desc: <?= $product[3] ?></div>
+			<div class="list__links">
 			<div class="list-link"><a href="update.php?id=<?= $product[0] ?>">Update</a></div>
+			<div class="list-link list-link--delete"><a href="delete.php?id=<?= $product[0] ?>">delete</a></div>
+			</div>
 		</div>
 		<?php
 					}

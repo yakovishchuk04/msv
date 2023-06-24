@@ -20,13 +20,16 @@
 	<link rel="stylesheet" href="../css/normalize.css">
 </head>
 <style>
+body{
+	background-image: url('https://img.freepik.com/premium-photo/dark-grey-black-slate-texture-with-high-resolution-background-of-natural-black-stone-wall_38607-444.jpg');
+}
 *,
 *::before,
 *::after{
 	box-sizing: border-box;
 }
 .account__form{
-	background-color: rgb(66, 122, 187);
+	background-color: white;
 	min-height: 100px;
 	max-width: 500px;
 	width: 100%;
@@ -55,7 +58,6 @@
 	align-items: center;
 }
 .account-reg input{
-	border: 1px solid black;
 	border-radius: 2px;
 	width: 400px;
 	margin-bottom: 30px;
@@ -63,6 +65,8 @@
 	padding: 15px;
 	font-family: "Open Sans";
 	font-size: 14px;
+	background: black;
+	color: white;
 }
 .account-reg input::placeholder{
 	font-family: "Open Sans";
