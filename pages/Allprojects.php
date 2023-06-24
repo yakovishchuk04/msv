@@ -125,7 +125,7 @@
           </div>
         </div>
 				<div class="footer__rights">
-					<div>MSV BUILD 0687958025 © 2023. All Rights Reserved.</div>
+					<div>MSV BUILD © 2023. All Rights Reserved.</div>
 				</div>
       </div>
     </footer>
