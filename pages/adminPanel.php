@@ -91,7 +91,7 @@ body{
 		<div class="container">
 			<div class="account__inner">
 				<div class="account__form">
-					<h1 class="account-title">Authorization</h1>
+					<h1 class="account-title">Sign in</h1>
 					<form class="account-reg" action="../php/auth.php" method="post">
 						<input type="text" class="reg-input" name="login" id="login" placeholder="Username">
 						<input type="password" class="reg-input" name="pass" id="pass"placeholder="Password">
